@@ -55,16 +55,14 @@ TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/devices/15400000.usb/15400000.dwc3/gadg
 TW_BRIGHTNESS_PATH := "/sys/devices/13900000.dsim/backlight/panel/brightness"
 TW_MAX_BRIGHTNESS := 255
 TW_DEFAULT_BRIGHTNESS := 162
-TW_NO_USB_STORAGE := true
 TW_NO_REBOOT_BOOTLOADER := true
 TW_HAS_DOWNLOAD_MODE := true
 TW_INCLUDE_NTFS_3G := true
+LZMA_RAMDISK_TARGETS := recovery
+TW_USE_NEW_MINADBD := true
 
 # exFAT drivers included in the kernel
 TW_NO_EXFAT_FUSE := true
-
-# Encryption support
-TW_INCLUDE_CRYPTO := true
 
 # Asian region languages
 TW_EXTRA_LANGUAGES := true
