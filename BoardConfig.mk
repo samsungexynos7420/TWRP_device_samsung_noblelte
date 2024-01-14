@@ -62,6 +62,7 @@ TW_INCLUDE_NTFS_3G := true
 LZMA_RAMDISK_TARGETS := recovery
 TW_USE_NEW_MINADBD := true
 TW_EXCLUDE_PYTHON := true
+TW_EXCLUDE_TWRPAPP := true
 
 # exFAT drivers included in the kernel
 TW_NO_EXFAT_FUSE := true
