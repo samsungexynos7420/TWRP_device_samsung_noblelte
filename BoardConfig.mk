@@ -1,10 +1,10 @@
-USE_CAMERA_STUB := true
+DEVICE_TREE := device/samsung/zeroflte
 
 TARGET_NO_BOOTLOADER := true
-TARGET_BOOTLOADER_BOARD_NAME := samsungexynos7420
+TARGET_BOOTLOADER_BOARD_NAME := universal7420
 
 # Platform
-TARGET_BOARD_PLATFORM := exynos7420
+TARGET_BOARD_PLATFORM := exynos5
 TARGET_BOARD_PLATFORM_GPU := mali-t760mp8
 
 # Flags
@@ -12,29 +12,38 @@ TARGET_BOARD_PLATFORM_GPU := mali-t760mp8
 #TARGET_GLOBAL_CPPFLAGS +=
 #COMMON_GLOBAL_CFLAGS +=
 
-# Architecture
+# CPU Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
 TARGET_CPU_ABI := arm64-v8a
 TARGET_CPU_ABI2 :=
-TARGET_CPU_VARIANT := generic
+TARGET_CPU_VARIANT := cortex-a53
 TARGET_CPU_SMP := true
 
 TARGET_2ND_ARCH := arm
 TARGET_2ND_ARCH_VARIANT := armv7-a-neon
 TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
-TARGET_2ND_CPU_VARIANT := generic
+TARGET_2ND_CPU_VARIANT := cortex-a53
 
+# Kernel
+TARGET_USES_UNCOMPRESSED_KERNEL := true
+#TARGET_KERNEL_SOURCE := kernel/samsung/universal7420
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
-TARGET_USES_UNCOMPRESSED_KERNEL := true
+TARGET_KERNEL_CONFIG := twrp_defconfig
+TARGET_KERNEL_DEVICE_DEFCONFIG := device_zeroflte_xx
 
+TARGET_PREBUILT_KERNEL := $(DEVICE_TREE)/Image
+TARGET_PREBUILT_DTB := $(DEVICE_TREE)/dtb.img
+
+# Boot image
 BOARD_KERNEL_CMDLINE := # Exynos doesn't take cmdline arguments from boot image
 BOARD_KERNEL_BASE := 0x10000000
 BOARD_KERNEL_PAGESIZE := 2048
 # 002RU = recovery kernel, 002KU = system kernel
 BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x01000000 --tags_offset 0x00000100 --board SYSMAGIC002RU
+BOARD_CUSTOM_BOOTIMG_MK :=  $(DEVICE_TREE)/bootimg.mk
 
 BOARD_BOOTIMAGE_PARTITION_SIZE     := 0x001C00000
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x002200000
@@ -43,15 +52,10 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 0x641BFB000 #0x641C00000 - 20480 (footer)
 BOARD_CACHEIMAGE_PARTITION_SIZE    := 0x012C00000
 BOARD_FLASH_BLOCK_SIZE := 131072
 
-TARGET_PREBUILT_KERNEL := device/samsung/zeroflte/Image
-TARGET_PREBUILT_DTB := device/samsung/zeroflte/dtb.img
-
-# Use this flag if the board has a ext4 partition larger than 2gb
+# File systems
 BOARD_HAS_LARGE_FILESYSTEM := true
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
-BOARD_SUPPRESS_SECURE_ERASE := true
-BOARD_CUSTOM_BOOTIMG_MK :=  device/samsung/zeroflte/bootimg.mk
 
 # TWRP specific build flags
 TW_THEME := portrait_hdpi
@@ -65,8 +69,9 @@ TW_DEFAULT_BRIGHTNESS := 162
 TW_NO_USB_STORAGE := true
 TW_NO_REBOOT_BOOTLOADER := true
 TW_HAS_DOWNLOAD_MODE := true
+TW_INCLUDE_NTFS_3G := true
+# exFAT drivers included in the kernel
 TW_NO_EXFAT_FUSE := true
-TW_MTP_DEVICE := "/dev/mtp_usb"
 TW_EXCLUDE_SUPERSU := true
 
 # Encryption support
@@ -75,10 +80,14 @@ TW_INCLUDE_CRYPTO := true
 #TW_INCLUDE_CRYPTO_SAMSUNG := true
 #TARGET_HW_DISK_ENCRYPTION := true
 #TARGET_KEYMASTER_WAIT_FOR_QSEE := true
+
+# Asian region languages
+TW_EXTRA_LANGUAGES := true
+
 #TWRP_INCLUDE_LOGCAT := true
-#TARGET_USES_LOGD := true
 
 # Init properties from bootloader version, ex. model info
 TARGET_UNIFIED_DEVICE := true
-TARGET_INIT_VENDOR_LIB := libinit_exynos
-TARGET_LIBINIT_DEFINES_FILE := device/samsung/zeroflte/init/init_zeroflte.cpp
+TARGET_INIT_VENDOR_LIB := libinit_zeroflte
+TARGET_RECOVERY_DEVICE_MODULES := libinit_zeroflte
+TARGET_LIBINIT_DEFINES_FILE := $(DEVICE_TREE)/init/init_zeroflte.cpp
