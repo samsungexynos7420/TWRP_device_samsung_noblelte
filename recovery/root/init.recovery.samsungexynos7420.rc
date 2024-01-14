@@ -1,3 +1,0 @@
-on init
-    chown system system /dev/ion
-    chmod 0664 /dev/ion

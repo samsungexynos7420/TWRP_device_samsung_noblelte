@@ -1,9 +1,13 @@
-/boot		emmc		/dev/block/platform/15570000.ufs/by-name/BOOT
-/recovery	emmc		/dev/block/platform/15570000.ufs/by-name/RECOVERY	flags=backup=1
-/system		ext4		/dev/block/platform/15570000.ufs/by-name/SYSTEM
-/data		ext4		/dev/block/platform/15570000.ufs/by-name/USERDATA	flags=encryptable=footer;length=-20480
-/cache		ext4		/dev/block/platform/15570000.ufs/by-name/CACHE
-/modem		emmc		/dev/block/platform/15570000.ufs/by-name/RADIO	flags=backup=1;display="Baseband"
-/efs		ext4		/dev/block/platform/15570000.ufs/by-name/EFS		flags=backup=1;display="EFS"
-/misc		emmc		/dev/block/platform/15570000.ufs/by-name/OTA
-/usb-otg	vfat		/dev/block/sdd1 /dev/block/sdd				flags=display="USB-OTG";storage;wipeingui;removable
+
+/boot			emmc		/dev/block/platform/15570000.ufs/by-name/BOOT
+/recovery		emmc		/dev/block/platform/15570000.ufs/by-name/RECOVERY	flags=backup=1
+
+/system			ext4		/dev/block/platform/15570000.ufs/by-name/SYSTEM
+/data			ext4		/dev/block/platform/15570000.ufs/by-name/USERDATA	flags=encryptable=footer;length=-20480
+/cache			ext4		/dev/block/platform/15570000.ufs/by-name/CACHE
+/misc			emmc		/dev/block/platform/15570000.ufs/by-name/OTA
+
+/modem			emmc		/dev/block/platform/15570000.ufs/by-name/RADIO		flags=backup=1;display="Baseband"
+/efs			ext4		/dev/block/platform/15570000.ufs/by-name/EFS		flags=backup=1;display="EFS"
+
+/usb-otg		vfat		/dev/block/sdd1 /dev/block/sdd				flags=display="USB-OTG";storage;wipeingui;removable
