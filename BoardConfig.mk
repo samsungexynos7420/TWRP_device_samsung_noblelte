@@ -38,6 +38,7 @@ BOARD_KERNEL_SEPARATED_DT := true
 # 002RU = recovery kernel, 002KU = system kernel
 BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x01000000 --tags_offset 0x00000100 --board SYSMAGIC002RU
 TARGET_CUSTOM_DTBTOOL := dtbhtoolExynos
+TARGET_SPECIFIC_HEADER_PATH += device/samsung/zeroflte/include
 
 # File systems
 BOARD_HAS_LARGE_FILESYSTEM := true
