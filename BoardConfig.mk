@@ -8,7 +8,6 @@ TARGET_BOOTLOADER_BOARD_NAME := universal7420
 TARGET_NO_BOOTLOADER := true
 TARGET_NO_RADIOIMAGE := true
 
-
 # CPU Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
@@ -69,3 +68,7 @@ TW_NO_EXFAT_FUSE := true
 
 # Asian region languages
 TW_EXTRA_LANGUAGES := true
+
+# Init
+TARGET_INIT_VENDOR_LIB := libinit_zeroflte
+TARGET_RECOVERY_DEVICE_MODULES := libinit_zeroflte
