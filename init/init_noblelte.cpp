@@ -61,36 +61,36 @@ void property_override_dual(char const system_prop[], char const vendor_prop[],
 void vendor_load_properties() {
     std::string bootloader = android::base::GetProperty("ro.bootloader", "");
 
-    if (bootloader.find("G920F") == 0) {
-    	property_override("ro.product.device", "zerofltexx");
-    } else if (bootloader.find("G920I") == 0) {
-    	property_override("ro.product.device", "zerofltedv");
-    } else if (bootloader.find("G920K") == 0) {
-    	property_override("ro.product.device", "zerofltktt");
-    } else if (bootloader.find("G920L") == 0) {
-    	property_override("ro.product.device", "zerofltelgt");
-    } else if (bootloader.find("G920S") == 0) {
-    	property_override("ro.product.device", "zeroflteskt");
-    } else if (bootloader.find("G920W8") == 0) {
-    	property_override("ro.product.device", "zerofltebmc");
-    } else if (bootloader.find("G920T") == 0) {
-    	property_override("ro.product.device", "zerofltetmo");
-    } else if (bootloader.find("G920A") == 0) {
-    	property_override("ro.product.device", "zeroflteatt");
-    } else if (bootloader.find("G9200") == 0) {
-    	property_override("ro.product.device", "zerofltechn");
-    } else if (bootloader.find("G9208") == 0) {
-    	property_override("ro.product.device", "zerofltechn");
-    } else if (bootloader.find("G9209") == 0) {
-    	property_override("ro.product.device", "zerofltectc");
-    } else if (bootloader.find("G920P") == 0) {
-    	property_override("ro.product.device", "zerofltespr");
-    } else if (bootloader.find("G920R4") == 0) {
-    	property_override("ro.product.device", "zeroflteusc");
-    } else if (bootloader.find("G920R6") == 0) {
-    	property_override("ro.product.device", "zerofltelra");
-    } else if (bootloader.find("G920R7") == 0) {
-    	property_override("ro.product.device", "zeroflteacg");
+    if (bootloader.find("N920C") == 0) {
+    	property_override("ro.product.device", "nobleltejv");
+    } else if (bootloader.find("N920I") == 0) {
+    	property_override("ro.product.device", "nobleltedv");
+    } else if (bootloader.find("N920K") == 0) {
+    	property_override("ro.product.device", "nobleltektt");
+    } else if (bootloader.find("N920L") == 0) {
+    	property_override("ro.product.device", "nobleltelgt");
+    } else if (bootloader.find("N920S") == 0) {
+    	property_override("ro.product.device", "noblelteskt");
+    } else if (bootloader.find("N920W8") == 0) {
+    	property_override("ro.product.device", "nobleltebmc");
+    } else if (bootloader.find("N920T") == 0) {
+    	property_override("ro.product.device", "nobleltetmo");
+    } else if (bootloader.find("N920A") == 0) {
+    	property_override("ro.product.device", "noblelteatt");
+    } else if (bootloader.find("N9200") == 0) {
+    	property_override("ro.product.device", "nobleltechn");
+    } else if (bootloader.find("N9208") == 0) {
+    	property_override("ro.product.device", "nobleltezt");
+    } else if (bootloader.find("N920G") == 0) {
+    	property_override("ro.product.device", "nobleltedd");
+    } else if (bootloader.find("N920P") == 0) {
+    	property_override("ro.product.device", "nobleltespr");
+    } else if (bootloader.find("N920R4") == 0) {
+    	property_override("ro.product.device", "noblelteusc");
+    } else if (bootloader.find("N920R6") == 0) {
+    	property_override("ro.product.device", "nobleltelra");
+    } else if (bootloader.find("N920R7") == 0) {
+    	property_override("ro.product.device", "noblelteacg");
     }
     
 }

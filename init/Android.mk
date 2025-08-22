@@ -22,7 +22,7 @@ LOCAL_MODULE_TAGS := optional
 LOCAL_C_INCLUDES := \
 	system/core/base/include \
 	system/core/init
-LOCAL_SRC_FILES := init_zeroflte.cpp
-LOCAL_MODULE := libinit_zeroflte
+LOCAL_SRC_FILES := init_noblelte.cpp
+LOCAL_MODULE := libinit_noblelte
 
 include $(BUILD_STATIC_LIBRARY)

@@ -7,6 +7,7 @@
 /misc			emmc		/dev/block/platform/15570000.ufs/by-name/OTA
 
 /modem			emmc		/dev/block/platform/15570000.ufs/by-name/RADIO		flags=backup=1;display="Baseband"
+/modem_debug		emmc		/dev/block/platform/15570000.ufs/by-name/CP_DEBUG	flags=backup=1;display="Baseband (Debug)";subpartitionof=/modem
 /efs			ext4		/dev/block/platform/15570000.ufs/by-name/EFS		flags=backup=1;display="EFS"
 
-/usb-otg		vfat		/dev/block/sdd1 /dev/block/sdd				flags=display="USB-OTG";storage;wipeingui;removable
+/usb-otg		vfat		/dev/block/sde1 /dev/block/sde				flags=display="USB-OTG";storage;wipeingui;removable

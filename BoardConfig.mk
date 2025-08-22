@@ -1,4 +1,4 @@
-DEVICE_TREE := device/samsung/zeroflte
+DEVICE_TREE := device/samsung/noblelte
 
 # Bootloader
 BOARD_VENDOR := samsung
@@ -25,7 +25,7 @@ TARGET_2ND_CPU_VARIANT := cortex-a53
 # Kernel
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
-TARGET_KERNEL_CONFIG := exynos7420-zeroflte_defconfig
+TARGET_KERNEL_CONFIG := exynos7420-noblelte_defconfig
 TARGET_KERNEL_SOURCE := kernel/samsung/universal7420
 
 # Image
@@ -38,7 +38,7 @@ BOARD_RECOVERYIMAGE_PARTITION_SIZE := 35651584
 # 002RU = recovery kernel, 002KU = system kernel
 BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x01000000 --tags_offset 0x00000100
 TARGET_CUSTOM_DTBTOOL := dtbhtoolExynos
-TARGET_SPECIFIC_HEADER_PATH += device/samsung/zeroflte/include
+TARGET_SPECIFIC_HEADER_PATH += device/samsung/noblelte/include
 
 # File systems
 BOARD_HAS_LARGE_FILESYSTEM := true
@@ -70,5 +70,5 @@ TW_NO_EXFAT_FUSE := true
 TW_EXTRA_LANGUAGES := true
 
 # Init
-TARGET_INIT_VENDOR_LIB := libinit_zeroflte
-TARGET_RECOVERY_DEVICE_MODULES := libinit_zeroflte
+TARGET_INIT_VENDOR_LIB := libinit_noblelte
+TARGET_RECOVERY_DEVICE_MODULES := libinit_noblelte

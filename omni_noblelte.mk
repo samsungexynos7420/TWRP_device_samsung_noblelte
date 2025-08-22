@@ -5,7 +5,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 $(call inherit-product, vendor/omni/config/common.mk)
 
 ## Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := zeroflte
-PRODUCT_NAME := omni_zeroflte
+PRODUCT_DEVICE := noblelte
+PRODUCT_NAME := omni_noblelte
 PRODUCT_BRAND := samsung
 PRODUCT_MANUFACTURER := samsung
